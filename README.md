@@ -8,6 +8,7 @@
 
 [Features](#features) • [Quick Start](#quick-start) • [Architecture](#architecture) • [MCP Integration](#mcp-integration) • [Configuration](#configuration) • [API Reference](#api-reference)
 
+  ![Screenshot Description](docs/images/xantus-rag-chat--screenshot.png)
 </div>
 
 ---
