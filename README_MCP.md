@@ -189,7 +189,6 @@ node --version  # Should be v18 or higher
 
 ## Resources
 
-- **Full Integration Guide**: See `MCP_INTEGRATION.md`
 - **MCP Server Repo**: https://github.com/onamfc/mcp-starter-template-ts
 - **MCP Specification**: https://modelcontextprotocol.io/
 - **Community MCP Servers**: https://github.com/modelcontextprotocol/servers
