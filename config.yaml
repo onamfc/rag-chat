@@ -1,0 +1,152 @@
+# Xantus Configuration File
+# Configure your LLM, embeddings, vector store, and RAG settings
+
+# ===== LLM Configuration =====
+llm:
+  # Provider: ollama, openai, or anthropic
+  provider: anthropic
+
+  # Model name (depends on provider)
+  # Ollama: llama3.2, mistral, etc.
+  # OpenAI: gpt-4, gpt-3.5-turbo, etc.
+  # Anthropic: claude-sonnet-4-20250514, claude-3-5-sonnet-20241022, etc.
+  model: claude-sonnet-4-20250514
+
+  # Temperature for sampling (0.0 to 2.0)
+  temperature: 0.7
+
+  # Maximum tokens to generate
+  max_tokens: 2048
+
+  # API key (required for OpenAI and Anthropic)
+  # Can also be set via environment variable: XANTUS_LLM_API_KEY
+  api_key: null
+
+  # API base URL (optional, for custom endpoints)
+  # For Ollama, defaults to http://localhost:11434
+  api_base: null
+
+# ===== Embedding Configuration =====
+embedding:
+  # Provider: huggingface, ollama, or openai
+  provider: huggingface
+
+  # Model name
+  # HuggingFace: BAAI/bge-small-en-v1.5, sentence-transformers/all-MiniLM-L6-v2
+  # Ollama: nomic-embed-text, mxbai-embed-large
+  # OpenAI: text-embedding-3-small, text-embedding-ada-002
+  model: BAAI/bge-small-en-v1.5
+
+  # Batch size for embedding generation
+  embed_batch_size: 10
+
+  # API key (required for OpenAI)
+  api_key: null
+
+# ===== Vector Store Configuration =====
+vector_store:
+  # Provider: chroma or qdrant
+  provider: chroma
+
+  # Path to persist vector store data
+  persist_path: ./data/vector_store
+
+  # Collection name
+  collection_name: xantus_documents
+
+# ===== RAG Configuration =====
+rag:
+  # Number of similar chunks to retrieve
+  similarity_top_k: 5
+
+  # Size of text chunks for indexing (in characters)
+  chunk_size: 1024
+
+  # Overlap between chunks (in characters)
+  chunk_overlap: 200
+
+  # Enable reranking of retrieved chunks (requires additional setup)
+  enable_reranking: false
+
+# ===== Server Configuration =====
+server:
+  # Host to bind the server to
+  host: 127.0.0.1
+
+  # Port to bind the server to
+  port: 8000
+
+  # Enable CORS
+  cors_enabled: true
+
+  # Allowed CORS origins
+  cors_origins:
+    - "*"
+
+# ===== Example Configurations =====
+
+# Example 1: Local setup with Ollama
+# llm:
+#   provider: ollama
+#   model: llama3.2
+#   api_base: http://localhost:11434
+# embedding:
+#   provider: ollama
+#   model: nomic-embed-text
+
+# Example 2: Cloud setup with OpenAI
+# llm:
+#   provider: openai
+#   model: gpt-4
+#   api_key: sk-your-api-key-here
+# embedding:
+#   provider: openai
+#   model: text-embedding-3-small
+#   api_key: sk-your-api-key-here
+
+# Example 3: Hybrid setup - Anthropic LLM with local embeddings
+# llm:
+#   provider: anthropic
+#   model: claude-3-5-sonnet-20241022
+#   api_key: sk-ant-your-api-key-here
+# embedding:
+#   provider: huggingface
+#   model: BAAI/bge-small-en-v1.5
+
+# Example 4: All local with Ollama
+# llm:
+#   provider: ollama
+#   model: mistral
+# embedding:
+#   provider: ollama
+#   model: nomic-embed-text
+# vector_store:
+#   provider: chroma
+#   persist_path: ./data/vector_store
+
+# ===== MCP Configuration =====
+# Enable MCP to connect external tools (calculator, file system, etc.)
+mcp:
+  # Set to true to enable MCP integration
+  enabled: true
+
+  # List of MCP servers to connect to
+  servers:
+    - name: "mcp-starter-template"
+      command: "node"
+      args: ["mcp-servers/mcp-starter-template-ts/dist/start.js"]
+
+  # Example: Using absolute path (for external MCP servers)
+  # servers:
+  #   - name: "external-mcp-server"
+  #     command: "node"
+  #     args: ["/absolute/path/to/server/index.js"]
+
+  # Example: Multiple MCP servers
+  # servers:
+  #   - name: "my-tools"
+  #     command: "node"
+  #     args: ["/path/to/mcp-server/index.js"]
+  #   - name: "database-tools"
+  #     command: "npx"
+  #     args: ["-y", "@modelcontextprotocol/server-postgres", "postgresql://localhost/mydb"]

@@ -1,0 +1,77 @@
+# Xantus Requirements
+# Core dependencies for the RAG application
+
+# ===== Core Framework =====
+fastapi>=0.115.6
+uvicorn[standard]>=0.32.0
+pydantic>=2.11.0,<3.0.0
+pydantic-settings>=2.7.0
+python-multipart>=0.0.17
+
+# ===== LlamaIndex Core =====
+llama-index-core>=0.11.0,<0.12.0
+
+# ===== LLM Providers =====
+# Ollama
+llama-index-llms-ollama>=0.3.0
+
+# OpenAI
+llama-index-llms-openai>=0.2.0
+
+# Anthropic
+llama-index-llms-anthropic>=0.3.0
+
+# ===== Embedding Providers =====
+# HuggingFace
+llama-index-embeddings-huggingface>=0.3.0
+
+# Ollama
+llama-index-embeddings-ollama>=0.3.0
+
+# OpenAI
+llama-index-embeddings-openai>=0.2.0
+
+# ===== Vector Stores =====
+# ChromaDB
+llama-index-vector-stores-chroma>=0.2.0
+chromadb>=0.5.0
+
+# Qdrant (optional - comment out if you get dependency conflicts)
+# llama-index-vector-stores-qdrant>=0.3.0
+# qdrant-client>=1.11.0
+
+# ===== Document Loaders =====
+llama-index-readers-file>=0.2.0
+
+# ===== Dependency Injection =====
+injector==0.22.0
+
+# ===== Configuration =====
+PyYAML==6.0.2
+
+# ===== UI =====
+streamlit==1.39.0
+requests==2.32.3
+
+# ===== Utilities =====
+python-dotenv==1.0.1
+
+# ===== MCP Integration =====
+mcp>=1.0.0  # Model Context Protocol SDK
+anthropic>=0.39.0  # Latest Anthropic SDK with tool support
+
+# ===== Optional: Additional document formats =====
+# Uncomment these if you need support for specific formats:
+# pypdf==5.1.0              # PDF support
+# python-docx==1.1.2        # DOCX support
+# python-pptx==1.0.2        # PPTX support
+# openpyxl==3.1.5           # Excel support
+# markdown==3.7             # Markdown support
+
+# ===== Development Dependencies =====
+# Uncomment for development:
+# pytest==8.3.3
+# pytest-asyncio==0.24.0
+# black==24.10.0
+# ruff==0.7.2
+# mypy==1.13.0

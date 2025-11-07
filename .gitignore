@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Environment variables (NEVER commit this!)
+.env
+
+# Data and storage
+data/
+*.db
+*.sqlite
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+.cache/
+
+# MCP Server build artifacts
+mcp-servers/*/node_modules/
+mcp-servers/*/dist/
+mcp-servers/*/build/
+mcp-servers/*/.env
+mcp-servers/*/coverage/

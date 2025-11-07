@@ -1,0 +1,3 @@
+[submodule "mcp-servers/mcp-starter-template-ts"]
+	path = mcp-servers/mcp-starter-template-ts
+	url = https://github.com/onamfc/mcp-starter-template-ts.git
