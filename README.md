@@ -448,8 +448,6 @@ mcp:
 
 For complete MCP setup and customization:
 - **Quick Start**: [`README_MCP.md`](./README_MCP.md)
-- **Technical Guide**: [`MCP_INTEGRATION.md`](./MCP_INTEGRATION.md)
-- **Setup Summary**: [`SETUP_COMPLETE.md`](./SETUP_COMPLETE.md)
 
 ---
 
@@ -932,7 +930,6 @@ A: Add FastAPI middleware in `xantus/main.py` for API key or OAuth.
 
 ## Additional Resources
 
-- **MCP Integration Guide**: [`MCP_INTEGRATION.md`](./MCP_INTEGRATION.md)
 - **MCP Quick Start**: [`README_MCP.md`](./README_MCP.md)
 - **API Documentation**: http://localhost:8000/docs (when running)
 - **LlamaIndex Docs**: https://docs.llamaindex.ai/
